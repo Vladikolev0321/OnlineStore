@@ -25,14 +25,10 @@ public class UserService {
 
     @Transactional
     public User createUser(UserDto userDto) {
-        // Convert UserDto to User entity
         User user = userMapper.convertDtoToEntity(userDto);
 
-        // Fetch roles by names from userDto and set to user entity
         Set<Role> roles = new HashSet<>(roleRepo.findByNameIn(userDto.roles()));
         user.setRoles(roles);
-
-        // Save the user entity
         User savedUser = userRepo.save(user);
 
         log.info("User created: {}", savedUser);
