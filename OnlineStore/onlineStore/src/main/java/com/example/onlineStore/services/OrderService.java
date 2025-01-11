@@ -6,7 +6,7 @@ import com.example.onlineStore.entities.Payment;
 import com.example.onlineStore.entities.User;
 import com.example.onlineStore.mappers.OrderMapper;
 import com.example.onlineStore.repositories.OrderRepo;
-import com.example.onlineStore.repositories.PaymentRepository;
+import com.example.onlineStore.repositories.PaymentRepo;
 import com.example.onlineStore.repositories.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class OrderService {
 
     private final OrderRepo orderRepository;
     private final UserRepo userRepository;
-    private final PaymentRepository paymentRepository;
+    private final PaymentRepo paymentRepository;
     private final OrderMapper orderMapper;
 
     public OrderDto createOrder(OrderDto orderDto) {
