@@ -1,6 +1,8 @@
 package com.example.onlineStore.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
@@ -12,7 +14,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Setter @Getter private String name;
 
     @OneToMany(mappedBy = "category")
     private Set<Product> products;
