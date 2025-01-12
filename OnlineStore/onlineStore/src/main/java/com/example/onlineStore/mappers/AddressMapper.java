@@ -12,6 +12,5 @@ public interface AddressMapper {
     @Mapping(target = "city", source = "dto.city")
     @Mapping(target = "state", source = "dto.state")
     @Mapping(target = "zipCode", source = "dto.zipCode")
-    @Mapping(target = "user.id", source = "dto.userId")
     Address convertDtoToEntity(AddressDto dto);
 }
